@@ -1,0 +1,1486 @@
+WARNING - 2024-08-16 02:01:03 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:03 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:03 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:03 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:07 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:07 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:07 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:07 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:13 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:13 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:13 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:01:13 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:01:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:01:20 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:30:02 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:30:02 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:30:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 02:30:02 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 02:30:02 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 02:30:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:07 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:18:07 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:18:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:07 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:18:07 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:18:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:51 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:51 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:54 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:18:54 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:18:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:18:54 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:18:54 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:18:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:20:50 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:20:50 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:21:17 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:21:17 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:21:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:21:17 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:21:17 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:21:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:21:19 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:21:19 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:21:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 03:21:19 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 03:21:19 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 03:21:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 04:49:08 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 04:49:08 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 04:49:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 04:49:08 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 04:49:08 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 04:49:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 04:58:58 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 04:58:58 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 07:34:48 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 07:34:48 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 07:34:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 07:34:48 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 07:34:48 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 07:34:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 08:57:04 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 08:57:04 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 08:57:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 08:57:04 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 08:57:04 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 08:57:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 08:57:12 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 08:57:12 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 08:57:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+WARNING - 2024-08-16 08:57:12 --> [DEPRECATED] Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET". in SYSTEMPATH/Filters/Filters.php on line 648.
+ 1 SYSTEMPATH/Filters/Filters.php(648): trigger_error('Setting lowercase HTTP method key "get" is deprecated. Use uppercase HTTP method like "GET".', 16384)
+ 2 SYSTEMPATH/Filters/Filters.php(399): CodeIgniter\Filters\Filters->processMethods()
+ 3 SYSTEMPATH/Filters/Filters.php(181): CodeIgniter\Filters\Filters->initialize('demo')
+ 4 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
+ERROR - 2024-08-16 08:57:12 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'api_demo_ci4', 8889, '', 0)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/ci4_sakerp24.api/app/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#5 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore(Array)
+#6 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+#7 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/ci4_sakerp24.api/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/ci4_sakerp24.api/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-08-16 08:57:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: demo]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `api_keys`
+WHERE `key` = :key:', [...], false)
+ 3 APPPATH/Filters/ApiKeyFilter.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Filters/Filters.php(203): App\Filters\ApiKeyFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 5 SYSTEMPATH/Filters/Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 6 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('demo', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/ci4_sakerp24.api/index.php')
